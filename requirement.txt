@@ -1,0 +1,9 @@
+streamlit
+scikit-learn
+sklearn
+pandas
+numpy
+docx2txt
+mammoth
+PyPDF2
+joblib
