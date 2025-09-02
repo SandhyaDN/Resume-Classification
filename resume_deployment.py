@@ -92,6 +92,7 @@ if uploaded_file is not None:
 
         # Predict directly with pipeline
         prediction = pipeline.predict([resume_text])[0]
+        prediction_label = label_en.inverse_transform([prediction])[0]
 
         st.subheader("Predicted Category")
-        st.success(f"Predicted Category: {prediction}")
+        st.success(f"Predicted Category: {prediction_label}")
