@@ -40,14 +40,14 @@ pipeline = Pipeline([
     ('logreg', LogisticRegression(random_state = 42, multi_class = 'multinomial'))
 ])
 # creating new x, y for pipeline usage
-#x_pipe = df['text']
+x_pipe = df['text']
 #label_en = LabelEncoder()
-#y_pipe = label_en.fit_transform(df['label'])
-#x_train_pipe, x_test_pipe, y_train_pipe, y_test_pipe = train_test_split(x_pipe, y_pipe, test_size = 0.2,
-                                                                   # random_state = 42, stratify = y_pipe)
+y_pipe = df['label']
+x_train_pipe, x_test_pipe, y_train_pipe, y_test_pipe = train_test_split(x_pipe, y_pipe, test_size = 0.2,
+                                                                    random_state = 42, stratify = y_pipe)
 
 # Fit pipeline
-pipeline.fit(x_train, y_train)
+pipeline.fit(x_train_pipe, y_train_pipe)
 
 # Save the pipeline
 joblib.dump(pipeline, 'resume_pipeline.pkl')
