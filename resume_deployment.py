@@ -94,4 +94,4 @@ if uploaded_file is not None:
         prediction = pipeline.predict([resume_text])[0]
 
         st.subheader("Predicted Category")
-        st.success(prediction)
+        st.success(f"Predicted Category: {prediction}")
