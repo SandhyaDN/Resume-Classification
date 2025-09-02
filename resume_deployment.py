@@ -41,8 +41,8 @@ pipeline = Pipeline([
 ])
 # creating new x, y for pipeline usage
 x_pipe = df['text']
-#label_en = LabelEncoder()
-y_pipe = df['label']
+label_en = LabelEncoder()
+y_pipe =  label_en.fit_transform(df['label'])
 x_train_pipe, x_test_pipe, y_train_pipe, y_test_pipe = train_test_split(x_pipe, y_pipe, test_size = 0.2,
                                                                     random_state = 42, stratify = y_pipe)
 
