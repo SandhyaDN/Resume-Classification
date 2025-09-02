@@ -81,7 +81,7 @@ def extract_text(file):
 # Streamlit UI
 st.title("📄 Resume Classification App")
 
-uploaded_file = st.file_uploader("Upload a resume (".doc",".docx",".pdf")", type=["doc", "docx","pdf"])
+uploaded_file = st.file_uploader("Upload a resume (.doc,.docx,.pdf)", type=["doc", "docx","pdf"])
 
 if uploaded_file is not None:
     resume_text = extract_text(uploaded_file)
